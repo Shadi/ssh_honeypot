@@ -20,7 +20,7 @@ You can use this package to reduce the impact of brute force login attemts on ss
 
 ### Usage
 
-1- Change the default port that is being used by your ssh server, usually this is specified in the file `/etc/ssh/sshd_config`, search  for the entry port, and change the value to a different port, it might be commented out if you are still using the default, after that restart the ssh service: `systemctl status ssh`
+1- Change the default port that is being used by your ssh server, usually this is specified in the file `/etc/ssh/sshd_config`, search  for the entry port, and change the value to a different port, it might be commented out if you are still using the default, after that restart the ssh service: `systemctl restart ssh`
 
 2- If you are using a firewall make sure you allow access to the new port, for instance if you specify the port 2242 in step(1) and you are using ufw firewall you can use the command: `ufw allow 2242/tcp`, from now on when you login you need to specify the new port using ssh `-p` flag: `ssh root@address -p NewPort`
 
