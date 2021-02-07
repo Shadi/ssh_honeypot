@@ -25,3 +25,11 @@ You can use this package to reduce the impact of brute force login attemts on ss
 2- If you are using a firewall make sure you allow access to the new port, for instance if you specify the port 2242 in step(1) and you are using ufw firewall you can use the command: `ufw allow 2242/tcp`, from now on when you login you need to specify the new port using ssh `-p` flag: `ssh root@address -p NewPort`
 
 3- run the package `ssh_honeypot`, this will use the default package configuration, it will pause execution for 15 seconds between attempts and write attempts to the log file `./attempts.log`
+
+### Automatically Start at Boot
+
+If you are using systemd then you can use the unit in [systemd/sshp.service](systemd/sshp.service) to automatically start ssh_honeybot on boot:
+
+1- Copy the file to `cp systemd/sshp.service /etc/systemd/system`
+2- Reload systemd: `systemctl daemon-reload`
+3- Enable and start the service: `systemctl enable --now sshp.service`

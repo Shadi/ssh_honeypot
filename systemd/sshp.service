@@ -2,7 +2,7 @@
 Description=ssh_honeypod daemon
 After=network.target auditd.service
 [Service]
-Type=notify
+Type=simple
 ExecStart=/usr/local/bin/ssh_honeypot -l /var/log/ssh_attempts.log
 [Install]
 WantedBy=multi-user.target
