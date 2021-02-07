@@ -5,7 +5,7 @@ You can use this package to reduce the impact of brute force login attemts on ss
 
 ### Installation
 
-1- Download and extract the binary: `wget https://github.com/Shadi/ssh_honeypot/releases/download/v0.1.0/ssh_honeypot_0.1.0_linux_amd64.tar.gz -q -O- | tar xz`
+1- Download and extract the binary: `wget https://github.com/Shadi/ssh_honeypot/releases/download/v1.0.0/ssh_honeypot_1.0.0_linux_amd64.tar.gz -q -O- | tar xz`
 
 2- Move the executable to a location in your $PATH: `mv ssh_honeypot /usr/local/bin`
 
