@@ -35,3 +35,23 @@ If you are using systemd then you can use the unit in [systemd/sshp.service](sys
 2- Reload systemd: `systemctl daemon-reload`
 
 3- Enable and start the service: `systemctl enable --now sshp.service`
+
+
+### Docker
+
+The 4 command line options have been converted into environment variables:
+
+* `-p` -> SSH_PORT
+* `-l` -> LOG_FILE
+* `-c` -> MAX_ATTEMPT
+* `-w` -> WAIT_DURATION
+
+To build docker image: `docker build . -t ssh_honeypot`
+
+To run: `docker run ssh_honeypot`
+
+Examples for different run configurations:
+* Change port `docker run -e SSH_PORT=2222 -p 2222:2222 ssh_honeypot`
+* Change log file path `docker run -e LOG_FILE=/tmp/attempts.log ssh_honeypot`
+* Change wait duration `docker run -e WAIT_DURATION=5 ssh_honeypot`
+* Change max attempts `docker run -e MAX_ATTEMPTS=10 ssh_honeypot`
